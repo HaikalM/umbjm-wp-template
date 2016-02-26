@@ -7,17 +7,58 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div id="wrapper" class="hfeed">
-<header id="header" role="banner">
-<section id="branding">
-<div id="site-title"><?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '<h1>'; } ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a><?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) { echo '</h1>'; } ?></div>
-<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-</section>
-<nav id="menu" role="navigation">
-<div id="search">
-<?php get_search_form(); ?>
-</div>
-<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-</nav>
+
+<header id="header">
+  <nav class="nav-secondary">
+    <ul class="container">
+      <li><a href="#">Calon Mahasiswa</a></li>
+      <li><a href="#">Mahasiswa</a></li>
+      <li><a href="#">Orang Tua</a></li>
+      <li><a href="#">Alumni</a></li>
+      <li><a href="#">Dosen/Staf</a></li>
+      <li class="pull-right">
+        <form id="searchform" method="get">
+          <div>
+           <input name="s" id="s" type="text" placeholder="pencarian">
+           <button>
+             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+           </button>
+          </div>
+        </form>
+      </li>
+    </ul>
+  </nav>
+  <nav class="nav-primary">
+    <div class="container">
+      <div id="site-title">
+        <h1>
+          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
+          <?php //echo esc_html( get_bloginfo( 'name' ) ); ?>
+            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Universitas Muhammadiyah">
+          </a>
+        </h1>
+      </div>
+      <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+    </div>
+  </nav>
 </header>
-<div id="container">
+
+<?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) : ?>
+<section id="slide">
+  
+</section>
+<section id="gretting" class="row">
+  <div class="container">
+    <h2>Selamat Datang Di Universitas Muhammdiyah Banjarmasin</h2>
+    <p>
+      UMY memiliki misi untuk menghasilkan lulusan profesional, unggul dan islami yang memiliki integritas kepribadian dan moralitas yang islami dalam konteks kehidupan individual maupun sosial.
+    </p>
+  </div>
+</section>
+<?php endif ?>
+
+
+
+
+
+<div class="container">
