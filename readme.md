@@ -22,8 +22,6 @@ When the theme ready for production, specifying the `themeName` attribute in `pa
 * Bootstrap
 * BlankSlate WordPress Theme
 
-
 #Todo
-* Add php files
 * Add jquery
 * Add uglify

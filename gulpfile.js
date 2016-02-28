@@ -21,6 +21,7 @@ var themeDir = '../' + themeName;
 
 var config = {
   bootstrapDir: './bower_components/bootstrap-sass',
+  jqueryDir: './bower_components/jquery',
   sourceDir: './src',
   destDir: './theme-boilerplate',
 };
@@ -48,10 +49,19 @@ gulp.task('sass',function(){
     .pipe(livereload());
 });
 
+
+gulp.task('default', function() {
+  return gulp.src(['foo/*', 'bar/*'])
+    .pipe(concat('result.txt'))
+    .pipe(gulp.dest('build'));
+});
+
 gulp.task('js',function(){
-  gulp.src(config.sourceDir+'/js/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('fail'))
+  return gulp.src([
+    // config.jqueryDir+'/dist/jquery.min.js',
+    config.bootstrapDir+'/assets/javascripts/bootstrap.min.js',
+    config.sourceDir+'/js/*.js'
+    ])
     .pipe(concat('main.js'))
     .pipe(gulp.dest(config.destDir+'/js'))
     .pipe(livereload());
