@@ -1,0 +1,35 @@
+#slide ul{padding:0;margin:0;}
+
+#slide li { list-style: none; }
+#slide ul li { float: left; }
+
+.dots {
+  padding: 10px 10px 0 10px;
+  margin: 0;
+  position: absolute;
+  right: 65px;
+  bottom: 15px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.61);
+  box-shadow: 0 0 2px #444;
+}
+
+.dots li {
+display: inline-block;
+width: 10px;
+height: 10px;
+margin: 0 4px;
+text-indent: -999em;
+border: 2px solid #444;
+border-radius: 6px;
+cursor: pointer;
+opacity: .4;
+-webkit-transition: background .5s, opacity .5s;
+-moz-transition: background .5s, opacity .5s;
+transition: background .5s, opacity .5s;
+}
+
+.dots li.active{
+  background: #444;
+  opacity: 1;
+}
