@@ -12,23 +12,27 @@
       <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
             <?php $id = get_the_id()  ?>
-            
             <li>
-              <a href="<?php get_permalink() ?> ">
-                <div class="thumbnail">
-                  <?php 
-                    if ( has_post_thumbnail() ) {
-                        the_post_thumbnail('thumbnail');
-                    } 
-                   ?>
-                </div>
-                <h3><?php Ucwords(the_title()) ?></h3>
-                
+              <!-- <div class="thumbnail">
+                <?php 
+                  if ( has_post_thumbnail() ) {
+                      the_post_thumbnail('thumbnail');
+                  } 
+                 ?>
+              </div> -->
+              <a href="<?php the_permalink()?>">
+                <h4><?php ucwords(the_title()) ?></h4>
+
               </a>
+             <?php $little_excerpt = substr(the_excerpt(),0,5); ?>
+             <?php echo $little_excerpt; ?>
             </li>
         <?php endwhile;?>
       <?php endif;?>  
       </ul>
+      <a href="#">
+        Lihat semua berita &raquo;
+      </a>
     </div>
     <div class="col-sm-5">
       <h2>Agenda</h2>
@@ -40,33 +44,22 @@
       <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
             <?php $id = get_the_id()  ?>
-            
-            <li>
-              <a href="<?php permalink() ?> ">
-                <span class="thumbnail">
-                  <?php 
-                  if ( has_post_thumbnail() ) {
-                      the_post_thumbnail('thumbnail');
-                  } 
-                 ?>
-                </span>
-              </a>
-                
-            </li>
 
         <?php endwhile;?>
       <?php endif;?>  
       </ul>
     </div>
     <div class="col-sm-2">
-      <h2>Layanan Online</h2>
+      <h2>Layanan</h2>
     </div>
   </div>
+<!-- endcontainer -->
+</div>
+
 <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php //get_template_part( 'entry' ); ?>
 <?php //comments_template(); ?>
 <?php //endwhile; endif; ?>
-</div>
 
 <?php get_template_part( 'nav', 'below' ); ?>
 <?php get_sidebar(); ?>

@@ -197,20 +197,28 @@ a{
   }
 }
 .frontpage{
+  margin-top: 1.5em;
   padding: 0;
   li{
     list-style: none;
+    margin-bottom: 2em;
     img{
-    width:150px !important;
-    height: 150px !important;
+      width:150px !important;
+      height: 150px !important;
+    }
+    a:hover{
+      color:#444;
+    }
   }
-  }
-  .thumbnail{
-    float: left;
-    margin-right: 10px;
-  }
-  h3{
-    color:#444;
+  // .thumbnail{
+  //   float: left;
+  //   margin-right: 10px;
+  // }
+  h4{
+    // color: #444;
+    font-weight: 500;
+    // margin-bottom: 5px;
+
   }
   
 }

@@ -13,6 +13,15 @@ if ( ! isset( $content_width ) ) $content_width = 640;
     array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
   );
 }
+
+
+// excerpt function
+function wpdocs_excerpt_more( $more ) {
+    return '.....';
+}
+
+
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 add_action( 'wp_enqueue_scripts', 'blankslate_load_scripts' );
 function blankslate_load_scripts()
 {

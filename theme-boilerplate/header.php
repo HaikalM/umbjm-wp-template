@@ -1,11 +1,19 @@
+<?php 
+function captitle($title) {
+     $title = ucwords($title);
+     return $title;
+}
+add_filter('wp_title', 'captitle');
+add_filter('the_title', 'captitle');
+ ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-<?php 
-wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <header id="header">
@@ -67,6 +75,7 @@ wp_head(); ?>
   <?php endif;?>  
 </ul>    
 </section>
+
 <section id="grettings" class="row">
   <div class="container">
     <div class="row">
@@ -92,5 +101,3 @@ wp_head(); ?>
   </div>
 </section>
 <?php endif ?>
-
-<div class="container">
