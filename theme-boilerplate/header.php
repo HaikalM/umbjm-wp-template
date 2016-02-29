@@ -7,8 +7,7 @@
 <?php 
 wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-
+<body <?php body_class(); ?>
 <header id="header">
   <nav class="nav-secondary">
     <ul class="container">
@@ -46,20 +45,52 @@ wp_head(); ?>
 
 <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) : ?>
 <section id="slide">
-  
+<ul>
+<?php 
+  // mulai filter halaman sesuai kategori untuk slider
+  $category = 'slider';
+  query_posts( array ( 'category_name' => $category, 'posts_per_page' => 5) ); ?>
+  <?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+        <?php $id = get_the_id()  ?>
+        
+        <li>
+          
+            <?php 
+              if ( has_post_thumbnail() ) {
+                  the_post_thumbnail('large');
+              } 
+             ?>
+        </li>
+
+    <?php endwhile;?>
+  <?php endif;?>  
+</ul>    
 </section>
-<section id="gretting" class="row">
+<section id="grettings" class="row">
   <div class="container">
-    <h2>Selamat Datang Di Universitas Muhammdiyah Banjarmasin</h2>
-    <p>
-      UMY memiliki misi untuk menghasilkan lulusan profesional, unggul dan islami yang memiliki integritas kepribadian dan moralitas yang islami dalam konteks kehidupan individual maupun sosial.
-    </p>
+    <div class="row">
+      <div class="col-sm-6" class="grettings-main">
+        <h2>Selamat Datang Di UM Banjarmasin</h2>
+        <p>
+          Universitas Muhammdiyah Banjarmasin memiliki misi untuk menghasilkan lulusan profesional, unggul dan islami yang memiliki integritas kepribadian dan moralitas yang islami dalam konteks kehidupan individual maupun sosial.
+        </p>
+      </div>
+      <div class="col-sm-2 grettings-box" >
+        <h2>Program Studi</h2>
+        <a href="#" id="prodi">Lihat semua program studi</a>
+      </div>
+      <div class="col-sm-2 grettings-box" >
+        <h2>Pendaftaran</h2>
+        <a href="#" id="pmb">Info Penerimaan Mhs baru</a>
+      </div>
+      <div class="col-sm-2 grettings-box" >
+        <h2>Peta Kampus</h2>
+        <a href="#">Lihat peta kampus</a>
+      </div>
+    </div>
   </div>
 </section>
 <?php endif ?>
-
-
-
-
 
 <div class="container">

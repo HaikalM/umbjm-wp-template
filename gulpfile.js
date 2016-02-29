@@ -50,17 +50,11 @@ gulp.task('sass',function(){
 });
 
 
-gulp.task('default', function() {
-  return gulp.src(['foo/*', 'bar/*'])
-    .pipe(concat('result.txt'))
-    .pipe(gulp.dest('build'));
-});
-
 gulp.task('js',function(){
   return gulp.src([
     // config.jqueryDir+'/dist/jquery.min.js',
     config.bootstrapDir+'/assets/javascripts/bootstrap.min.js',
-    config.sourceDir+'/js/*.js'
+    config.sourceDir+'/js/**/**.js'
     ])
     .pipe(concat('main.js'))
     .pipe(gulp.dest(config.destDir+'/js'))
@@ -89,7 +83,7 @@ gulp.task('production', function() {
 gulp.task('watch',function(){
   livereload.listen();
   gulp.watch(config.sourceDir+'/css/*.scss',['sass']);
-  gulp.watch(config.sourceDir+'/js/*.js',['js']);
+  gulp.watch(config.sourceDir+'/js/**/**.js',['js']);
   gulp.watch('img/src/*.{png,jpg,gif}',['img']);
   gulp.watch(config.destDir+'/**',['template']);
 })

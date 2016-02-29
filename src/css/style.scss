@@ -1,7 +1,7 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 @import "variables";
-
+@import "unslider";
 
 
 /**
@@ -82,8 +82,10 @@ a{
 
 .nav-primary{
   // padding:15px 0;
+  position: relative;
+  z-index: 2;
   background: #fff;
-  box-shadow: 0 1px 5px #ccc;
+  box-shadow:0 1px 11px #848484;
   #menu-main-menu{
     margin-bottom: 0;
     vertical-align: middle;
@@ -120,4 +122,59 @@ a{
   }
 }
 
+
+/** 
+ * slide
+ */
+
+
+#slide{
+  position: relative;
+  ul li{float: left}
+  img{
+    width: 100%;
+    height: 100% !important;
+  }
+}
+
+/**
+ * grettings
+ */
+
+#grettings{
+  padding:25px 0;
+  background: $brand-primary;
+  color:#fff;
+  h2{font-size: 1.5em;padding:0;margin:0 0 15px 0}
+  p{
+    color:rgba(#fff,0.7);
+    line-height: 25px
+  }
+}
+.grettings-main{
+  p{line-height: 25px}
+}
+
+.grettings-box{
+  margin:15px 0;
+  // background: $brand-secondary;
+  transition:all .2s;
+  padding:15px 0;
+  text-align: center !important;
+  // border-radius: 10px !important;
+  background: darken($brand-primary,13%);
+  &:nth-child(2){
+    border-radius: 5px 0 0 5px;
+  }
+  &:last-child{
+    border-radius: 0 5px 5px 0;
+  }
+  a{
+    color: lighten($brand-primary,10%);
+  }
+  &:hover{
+    transition:all .2s;
+    background: darken($brand-primary,5%);
+  }
+}
 
