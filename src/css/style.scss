@@ -3,6 +3,10 @@
 @import "variables";
 @import "unslider";
 
+h1,h2,h3,h4{font-weight: 200}
+*{
+  font-weight: 200;
+}
 
 /**
  * global
@@ -170,11 +174,59 @@ a{
     border-radius: 0 5px 5px 0;
   }
   a{
-    color: lighten($brand-primary,10%);
+    color: lighten($brand-primary,20%);
   }
   &:hover{
     transition:all .2s;
     background: darken($brand-primary,5%);
   }
+}
+
+
+/**
+ * content
+ */
+#content{
+  h2{
+    color:$brand-secondary;
+    font-weight: 200;
+    font-size: 2em;
+  }
+  img{
+    width: inherit;
+  }
+}
+.frontpage{
+  padding: 0;
+  li{
+    list-style: none;
+    img{
+    width:150px !important;
+    height: 150px !important;
+  }
+  }
+  .thumbnail{
+    float: left;
+    margin-right: 10px;
+  }
+  h3{
+    color:#444;
+  }
+  
+}
+
+
+/**
+ * footer
+ */
+.footer-top{
+  padding:1em 0;
+  color:rgba(#fff,.8);
+  background: lighten(#444,10%);
+}
+.footer-bottom{
+  padding:1em 0;
+  background: #444;
+  color:rgba(#fff,.9);
 }
 

@@ -46,23 +46,21 @@ wp_head(); ?>
 <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) : ?>
 <section id="slide">
 <ul>
-<?php 
+  <?php 
   // mulai filter halaman sesuai kategori untuk slider
   $category = 'slider';
   query_posts( array ( 'category_name' => $category, 'posts_per_page' => 5) ); ?>
   <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
-        <?php $id = get_the_id()  ?>
-        
-        <li>
-          
-            <?php 
-              if ( has_post_thumbnail() ) {
-                  the_post_thumbnail('large');
-              } 
-             ?>
-        </li>
-
+      <?php $id = get_the_id()  ?>
+      
+      <li>
+          <?php 
+            if ( has_post_thumbnail() ) {
+                the_post_thumbnail('large');
+            } 
+           ?>
+      </li>
     <?php endwhile;?>
   <?php endif;?>  
 </ul>    
@@ -92,5 +90,3 @@ wp_head(); ?>
   </div>
 </section>
 <?php endif ?>
-
-<div class="container">
