@@ -187,10 +187,11 @@ a{
  * content
  */
 #content{
+  margin-bottom: 2em;
   h2{
     color:$brand-secondary;
     font-weight: 200;
-    font-size: 2em;
+    font-size: 25px;
   }
   img{
     width: inherit;
