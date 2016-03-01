@@ -79,7 +79,7 @@
     </div>
     <div class="col-sm-3">
       <h2>LAYANAN ONLINE</h2>
-      <?php wp_nav_menu( array( 'theme_location' => 'layanan-menu' ) ); ?>
+      <?php strtoupper(wp_nav_menu( array( 'theme_location' => 'layanan-menu' ) )); ?>
     </div>
   </div>
 <!-- endcontainer -->

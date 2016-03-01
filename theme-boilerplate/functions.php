@@ -8,12 +8,14 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
 global $content_width;
 
-if ( ! isset( $content_width ) ) $content_width = 640;
-  register_nav_menus(
-    array( 'main-menu' => __( 'Main Menu', 'blankslate' ) )
-  );
-}
 
+// registering menu
+if ( ! isset( $content_width ) ) $content_width = 640;
+  register_nav_menus(array( 
+      'main-menu' =>'Main menu',
+      'layanan-menu' =>'Layanan Menu'
+      ));
+}
 
 // excerpt function
 function wpdocs_excerpt_more( $more ) {
