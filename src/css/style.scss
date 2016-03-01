@@ -18,6 +18,10 @@ h1,h2,h3,h4{font-weight: 200}
 .noPadding{
   padding:0 !important;
 }
+
+.mainPadding{
+  padding: 2em 0 !important;
+}
 a{
   color:$brand-primary;
   &:hover{
@@ -147,7 +151,7 @@ a{
  */
 
 #grettings{
-  padding:25px 0;
+  @extend .mainPadding;
   background: $brand-primary;
   color:#fff;
   h2{font-size: 1.5em;padding:0;margin:0 0 15px 0}
@@ -238,18 +242,21 @@ a{
   }
 }
 
+#tweet{
+  @extend .mainPadding;
+}
 
 
 /**
  * footer
  */
 .footer-top{
-  padding:1em 0;
+  padding:2em 0;
   color:rgba(#fff,.8);
   background: lighten(#444,10%);
 }
 .footer-bottom{
-  padding:1em 0;
+  padding:2em 0;
   background: #444;
   color:rgba(#fff,.9);
 }

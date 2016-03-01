@@ -85,6 +85,17 @@
 <!-- endcontainer -->
 </div>
 
+<div class="container" id="tweet">
+  <div class="row">
+    <div class="col-sm-9">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit ut optio dolore molestias, sed? Minus qui asperiores, eaque error earum laboriosam doloribus, veniam, esse excepturi consequuntur ab quos temporibus deleniti.
+    </div>
+    <div class="col-sm-3">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores recusandae suscipit ab voluptates, tempore cupiditate perferendis, quis distinctio id doloremque velit, vero quos natus nihil. Laboriosam quod explicabo perspiciatis, voluptates.
+    </div>
+  </div>
+</div>
+
 <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <?php //get_template_part( 'entry' ); ?>
 <?php //comments_template(); ?>
