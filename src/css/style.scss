@@ -1,5 +1,5 @@
 @import "bootstrap";
-@import "bootstrap/theme";
+// @import "bootstrap/theme";
 @import "variables";
 @import "unslider";
 
@@ -50,6 +50,8 @@ a{
   ul{
     margin-bottom: 0 !important;
     overflow: hidden;
+    padding: 0;
+    float: left;
   }
   
   a{
@@ -105,7 +107,7 @@ a{
       position: relative;
       a{
         color:$brand-primary;
-        padding:40px 15px;
+        padding:40px 10px;
         display: block;
         &:hover{
           background: #eee;
@@ -244,6 +246,53 @@ a{
 
 #tweet{
   @extend .mainPadding;
+  // background: rgba(#444,.1);
+  #badge{
+    // margin:10px 0;
+    display: block;
+  }
+  #badge svg{
+    margin-right: 5px;
+    width: 20px;
+    height: 25px;
+    float: left;
+  }
+  p{margin-bottom: 0}
+}
+
+#last_tweet{
+  padding: 15px 5px;
+  background: rgba($brand-secondary,.05);
+  border:solid 1px rgba($brand-secondary,.1);
+  border-radius: 5px;
+}
+
+#tweet_meta{
+
+}
+#tweet_date{
+  ul{
+    @extend .noPadding;
+    margin:0;
+  }
+  li{
+    text-align: center;
+    padding:0;
+    float: left;
+    list-style: none;
+    .tweet{display: none}
+  }
+}
+
+#tweet_text{
+  ul{
+    padding:0;
+    margin:0;
+  }
+  li{list-style:none}
+  .tweet{
+    font-size: 17px;
+  }
 }
 
 

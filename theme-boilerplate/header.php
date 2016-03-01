@@ -18,23 +18,26 @@ add_filter('the_title', 'captitle');
 <body <?php body_class(); ?>>
 <header id="header">
   <nav class="nav-secondary">
-    <ul class="container">
+    <div class="container">
+    <ul >
       <li><a href="#">Calon Mahasiswa</a></li>
       <li><a href="#">Mahasiswa</a></li>
       <li><a href="#">Orang Tua</a></li>
       <li><a href="#">Alumni</a></li>
       <li><a href="#">Dosen/Staf</a></li>
       <li class="pull-right">
-        <form id="searchform" method="get">
-          <div>
-           <input name="s" id="s" type="text" placeholder="pencarian">
-           <button>
-             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-           </button>
-          </div>
-        </form>
+        
       </li>
     </ul>
+    <form id="searchform" method="get" class="pull-right">
+      <div>
+       <input name="s" id="s" type="text" placeholder="pencarian">
+       <button>
+         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+       </button>
+      </div>
+    </form>
+    </div>
   </nav>
   <nav class="nav-primary">
     <div class="container">
@@ -76,7 +79,7 @@ add_filter('the_title', 'captitle');
 </ul>    
 </section>
 
-<section id="grettings" class="row">
+<section id="grettings" >
   <div class="container">
     <div class="row">
       <div class="col-sm-6" class="grettings-main">

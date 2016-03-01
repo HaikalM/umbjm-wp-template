@@ -13,7 +13,8 @@ global $content_width;
 if ( ! isset( $content_width ) ) $content_width = 640;
   register_nav_menus(array( 
       'main-menu' =>'Main menu',
-      'layanan-menu' =>'Layanan Menu'
+      'layanan-menu' =>'Layanan Menu',
+      'top-menu' => 'Top Menu'
       ));
 }
 
