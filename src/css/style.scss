@@ -261,7 +261,7 @@ $main-color: $nth !default;
   li{
     transition: background .2s;
     list-style-type: none;
-    @include backgrounds(lighten($brand-primary,15%), 6);
+    @include backgrounds(lighten($brand-primary,30%), 10);
     // background: random(40d47e);
     a{
       padding:5px 10px;
@@ -273,7 +273,7 @@ $main-color: $nth !default;
     &:hover{
       transition: background .2s;
       $warna: darken($brand-primary,5%);
-      @include backgrounds(lighten($brand-primary,15%), 6);
+      @include backgrounds(lighten($brand-primary,15%), 1);
       a{text-decoration: none;}
     }
   }
