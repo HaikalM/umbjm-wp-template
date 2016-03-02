@@ -15,3 +15,13 @@ jQuery(function() { jQuery('#slide').unslider({
   dots: true,
   auto:false
 }) })
+
+// menu
+menu = jQuery('#menu-main-menu li');
+respmenu = jQuery('#resp-menu');
+// respmenu.append(menu);
+
+jQuery('#resp-icon .menu').click (function(){
+  jQuery(this).toggleClass('open');
+  respmenu.fadeToggle();
+});

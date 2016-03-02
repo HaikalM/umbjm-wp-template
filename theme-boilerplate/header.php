@@ -16,6 +16,15 @@ add_filter('the_title', 'captitle');
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
+
+<div id="resp-icon">
+  <div class="menu respbtn" data-menu="14">
+    <div class="icon-circle"></div>
+    <div class="icon"></div>
+  </div>
+</div>
+
 <header id="header">
   <nav class="nav-secondary">
     <div class="container">
@@ -50,9 +59,24 @@ add_filter('the_title', 'captitle');
         </h1>
       </div>
       <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+
     </div>
   </nav>
 </header>
+
+<!-- resp menu -->
+<div id="resp-menu">
+  <h4 class="pull-left">Menu</h4>
+    <form id="searchform" method="get" class="pull-right">
+    <div>
+     <input name="s" id="s" type="text" placeholder="pencarian">
+     <button>
+       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+     </button>
+    </div>
+  </form>
+   <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+</div>
 
 <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) : ?>
 <section id="slide">

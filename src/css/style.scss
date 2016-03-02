@@ -2,6 +2,7 @@
 // @import "bootstrap/theme";
 @import "variables";
 @import "unslider";
+@import "responsive";
 
 h1,h2,h3,h4{font-weight: 200}
 *{
@@ -37,12 +38,190 @@ a{
   @extend .dropdown-menu;
 }
 
+
+/**
+ * respmenu button
+ */
+#resp-icon{
+  @media (max-width: $screen-sm-max) {
+    display: block !important;
+  }
+  display: none;
+  $dark: #fff;
+  $light: #efefef;
+  $color: $brand-primary;
+
+  @mixin btn($left, $top) {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 30px;
+    transition-duration: 0.5s;
+    z-index: 9999;
+  }
+
+  @mixin icon($height, $width) {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: $height;
+    width: $width;
+    top: 30px;
+    background-color: $dark;
+  }
+
+  @mixin icon-before($height, $width, $top) {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $dark;
+    content: "";
+    top: $top;
+  }
+
+  @mixin icon-after($height, $width, $top) {
+    transition-duration: 0.5s;
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $dark;
+    content: "";
+    top: $top;
+  }
+
+  @mixin icon-circle($height, $width) {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: $height;
+    width: $width;
+    top: 2px;
+    border-radius: 100%;
+    background: $brand-primary;
+    border: 2px solid $dark;
+    left: -15px;
+  }
+
+  .respbtn{
+    @include btn(15px, 400px);
+    .icon-circle {
+      box-shadow:0 0 10px #444;
+      @include icon-circle(60px, 60px);
+      &:hover {
+        background:lighten($brand-primary,5%);
+      }
+    }
+    
+    .icon {
+      @include icon(2px, 30px);
+      // border-radius: 4px;
+      
+      &:before{
+        @include icon-before(2px, 30px, -10px);
+        // border-radius: 4px;
+      }
+      
+      &:after{
+        @include icon-after(2px, 30px, 10px);
+        // border-radius: 4px;
+      }
+    }
+    
+    &.open {
+      .icon-circle {
+        background:lighten($brand-primary,10%);
+      }
+      .icon {
+        transition-duration: 0.5s;
+        background: transparent;
+        
+        &:before{
+          transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+        }
+
+        &:after{
+          transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+        }
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 /**
  * header
  */
+#resp-menu{
+  display: none;
+  padding:3em 2em;
+  position: fixed;
+  overflow: auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:$brand-primary;
+  ul{
+    padding:0;margin:0;margin-bottom:2em;clear:both
+  }
+  
+  h4{
+    font-size:2em;font-weight:500;color:#fff
+  }
+  
+  .sub-menu{
+    background:transparent;
+    box-shadow:none;
+    border:none;
+    display: none;
+    position: relative !important;
+    float:none;
+    margin-bottom: 0;
+    li{
+      border-top:solid 1px rgba(#fff,.5);
+      border-bottom:none;
+    }
+    li a:hover{
+      background:transparent;
+    }
+    a{
+      font-weight: 200;
+      padding:10px 10px 10px 25px !important;
 
+    }
+  }
+  a{
+    padding:10px;
+    font-size: 1.5em;
+    transition:color .2s;
+    color:rgba(#fff,.8);
+    display: block;
+    &:hover{
+      transition:color .2s;
+      text-decoration: none;
+      color:#fff;
+    }
+  }
+  li{
+    list-style:none;
+    border-bottom:solid 1px rgba(#fff,.5)
+  }
+  #searchform{margin:10px 0}
+  #searchform input[type=text]{
+    padding:5px 10px 5px 25px;
+  }
+  .glyphicon{
+    top:5px
+  }
+  z-index: 99;
+}
 .nav-secondary{
   // overflow: hidden;
+  @media (max-width: $screen-sm-max) {
+    display: none !important;
+  }
   background: $brand-primary;
   font-size: 12px;
   padding:8px 0;
@@ -66,6 +245,9 @@ a{
       border-left: none;
       padding-left:0px;
     }
+  }
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    display: none !important;
   }
 }
 
@@ -92,12 +274,18 @@ a{
 }
 
 .nav-primary{
+  @media (max-width: $screen-sm-max) {
+    border-top:solid 10px $brand-primary;
+  }
   // padding:15px 0;
   position: relative;
   z-index: 2;
   background: #fff;
   box-shadow:0 1px 11px #848484;
   #menu-main-menu{
+    @media (max-width: $screen-sm-max) {
+      display: none !important;
+    }
     margin-bottom: 0;
     vertical-align: middle;
     @extend .pull-right;
@@ -261,10 +449,10 @@ $main-color: $nth !default;
   li{
     transition: background .2s;
     list-style-type: none;
-    @include backgrounds(lighten($brand-primary,30%), 10);
+    @include backgrounds(lighten($brand-primary,40%), 10);
     // background: random(40d47e);
     a{
-      padding:5px 10px;
+      padding:10px;
       display: block;
       margin-bottom: 2px;
       text-transform: uppercase;
@@ -273,7 +461,7 @@ $main-color: $nth !default;
     &:hover{
       transition: background .2s;
       $warna: darken($brand-primary,5%);
-      @include backgrounds(lighten($brand-primary,15%), 1);
+      @include backgrounds(lighten($brand-primary,35%), 10);
       a{text-decoration: none;}
     }
   }
