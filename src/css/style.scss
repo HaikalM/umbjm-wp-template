@@ -137,8 +137,6 @@ a{
 /** 
  * slide
  */
-
-
 #slide{
   position: relative;
   ul li{float: left}
@@ -230,20 +228,61 @@ a{
   }  
 }
 
+$blue: #3ea5ce;
+$green: #99c712;
+$yellow: lighten(#ffba00, 5%);
+$red: #E53B3A;
+
+$colors: $blue, $green, $red, $yellow;
+$key: random( length($colors) );
+$nth: nth( $colors, $key );
+
+$main-color: $nth !default;
+
+@mixin backgrounds($c, $y) {
+  background: $c;
+  @for $i from 1 through $y {
+    $k: 10%;
+    $j: $i - 1;
+
+    @if $i == 1 {
+      &:nth-child(#{$i}) { background: $c; }
+    }
+    @else {
+      &:nth-child(#{$i}) { background: darken($c, ($k * $j)); }
+    }
+  }
+}
+
+
 #menu-layanan{
   margin-top: 10px;
   @extend .noPadding;
   li{
+    transition: background .2s;
     list-style-type: none;
+    @include backgrounds(lighten($brand-primary,15%), 6);
+    // background: random(40d47e);
     a{
       padding:5px 10px;
       display: block;
       margin-bottom: 2px;
       text-transform: uppercase;
+      color:#fff;
+    }
+    &:hover{
+      transition: background .2s;
+      $warna: darken($brand-primary,5%);
+      @include backgrounds(lighten($brand-primary,15%), 6);
+      a{text-decoration: none;}
     }
   }
 }
 
+
+/**
+ * twiteer
+ */
 #tweet{
   @extend .mainPadding;
   // background: rgba(#444,.1);
@@ -252,15 +291,16 @@ a{
     display: block;
   }
   #badge svg{
-    margin-right: 5px;
+    margin-right: 0px;
     width: 20px;
-    height: 25px;
+    height: 18px;
     float: left;
   }
   p{margin-bottom: 0}
 }
 
 #last_tweet{
+  overflow: hidden;
   padding: 15px 5px;
   background: rgba($brand-secondary,.05);
   border:solid 1px rgba($brand-secondary,.1);
@@ -293,6 +333,91 @@ a{
   .tweet{
     font-size: 17px;
   }
+}
+
+/**
+ * social icon
+ */
+
+#social{
+  padding:0;
+  margin:1em 0 0 0;
+  li{
+    display:inline-table;
+    margin-right: 20px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  a{
+    
+  }
+  svg{
+    border:solid 1px #ddd;
+    border-radius:100%;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@mixin socialAccount($color){
+  transition:all .2s;
+  fill:#fff;
+  background: $color;
+  border:solid 1px $color !important;
+  &:hover{
+    transition:all .2s;
+    fill:#fff !important;
+    background: lighten($color,10%);
+  }
+}
+
+#facebook{
+  @include socialAccount(#46629E);
+  // transition:all .2s;
+  // fill:#46629E !important;
+  // border:solid 1px #46629E !important;
+  // &:hover{
+  //   transition:all .2s;
+  //   fill:#fff !important;
+  //   background: #46629E;
+  // }
+}
+
+#twitter{
+  @include socialAccount(#55ACEE);
+  // transition:all .2s;
+  // fill: #55ACEE !important;
+  // border:solid 1px #55ACEE !important;
+  // &:hover{
+  //   transition:all .2s;
+  //   fill:#fff !important;
+  //   background: #55ACEE;
+  // }
+}
+
+#gplus{
+  @include socialAccount(#DC4A38);
+  // transition:all .2s;
+  // fill:#DC4A38 !important;
+  // border:solid 1px #DC4A38 !important;
+  // &:hover{
+  //   transition:all .2s;
+  //   fill:#fff !important;
+  //   background: #DC4A38;
+  // }
+}
+
+#youtube{
+  @include socialAccount(#DC4A38);
+  // transition:all .2s;
+  // fill:#DC4A38 !important;
+  // border:solid 1px #E02F2F !important;
+  // &:hover{
+  //   transition:all .2s;
+  //   fill:#fff !important;
+  //   background: #E02F2F;
+  // }
 }
 
 
