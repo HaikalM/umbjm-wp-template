@@ -55,8 +55,8 @@ a{
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 30px;
+    bottom: 30px;
+    right: 15px;
     transition-duration: 0.5s;
     z-index: 9999;
   }
@@ -354,18 +354,14 @@ a{
 
 .grettings-box{
   margin:15px 0;
+  min-height: 104px;
   // background: $brand-secondary;
   transition:all .2s;
-  padding:15px 0;
+  padding:15px;
   text-align: center !important;
   // border-radius: 10px !important;
   background: darken($brand-primary,13%);
-  &:nth-child(2){
-    border-radius: 5px 0 0 5px;
-  }
-  &:last-child{
-    border-radius: 0 5px 5px 0;
-  }
+  border-radius: 5px;
   a{
     color: lighten($brand-primary,20%);
   }
@@ -496,8 +492,11 @@ $main-color: $nth !default;
   border-radius: 5px;
 }
 
-#tweet_meta{
-
+div#tweet_meta{
+  margin-bottom: 1em;
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    margin-bottom: 1em  !important;
+  }
 }
 #tweet_date{
   ul{
@@ -525,12 +524,31 @@ $main-color: $nth !default;
 }
 
 /**
+ * quote
+ */
+#quote{
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 3em;
+  }
+  h2{color:$brand-secondary}
+  blockquote{
+    font-style:italic;
+    font-size: 1em;
+  }
+}
+
+.quote-author{
+  margin-top: 1.5em;
+  font-style:normal;
+  font-weight: bold;
+}
+/**
  * social icon
  */
 
 #social{
   padding:0;
-  margin:1em 0 0 0;
+  margin:2em 0 0 0;
   li{
     display:inline-table;
     margin-right: 20px;

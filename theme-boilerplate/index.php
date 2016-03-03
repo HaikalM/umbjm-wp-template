@@ -153,9 +153,22 @@
 
 <section id="video">
   <div class="container">
-    <div class="row"  id="youtube-api">
-      <div class="loader">
-        Loading...
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="row" id="youtube-api">
+          <div class="loader">
+            Loading...
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3" id="quote">
+        <h2>Mutiara Hari Ini</h2>
+        <blockquote>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum at explicabo, voluptatibus minima ullam nihil consequuntur nesciunt reiciendis in odio tenetur, maxime. Ex nostrum odio accusantium veritatis ipsa, fuga sequi.
+          <span class="quote-author pull-right">Ali Bin Abi Thalib</span>
+        </blockquote>
+
+
       </div>
     </div>
   </div>

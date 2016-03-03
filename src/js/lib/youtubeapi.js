@@ -30,7 +30,7 @@ jQuery(document).ready(function(){
       "https://www.googleapis.com/youtube/v3/playlistItems",{
         part: "snippet",
         // jumlah yang akan ditampilkan
-        maxResults: 4,
+        maxResults: 3,
         playlistId: pid,
         key: APIkey},
         // ambil data dari API
@@ -43,7 +43,7 @@ jQuery(document).ready(function(){
             // panggil video id
             vidId = item.snippet.resourceId.videoId;
             // styling data dari API
-            output = '<div class=\"col-xs-6 col-md-3\"><a href=\"https://youtu.be/'+vidId+'\" target=\"_blank\"><div class=\"thumbnail\"><img src=\"http://img.youtube.com/vi/'+vidId+'/sddefault.jpg\" alt=\"+vidJudul+\"><div class=\"caption\"><h5>'+vidJudul+'</h5></div></div></a></div>';
+            output = '<div class=\"col-xs-6 col-md-4\"><a href=\"https://youtu.be/'+vidId+'\" target=\"_blank\"><div class=\"thumbnail\"><img src=\"http://img.youtube.com/vi/'+vidId+'/sddefault.jpg\" alt=\"+vidJudul+\"><div class=\"caption\"><h5>'+vidJudul+'</h5></div></div></a></div>';
 
             // inject ke halaman html
             

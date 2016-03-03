@@ -88,14 +88,12 @@ add_filter('the_title', 'captitle');
   <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
         <?php $id = get_the_id()  ?>
-        
         <li>
-          
-            <?php 
-              if ( has_post_thumbnail() ) {
-                  the_post_thumbnail('large');
-              } 
-             ?>
+          <?php 
+            if ( has_post_thumbnail() ) {
+                the_post_thumbnail('large');
+            } 
+           ?>
         </li>
 
     <?php endwhile;?>
@@ -106,23 +104,33 @@ add_filter('the_title', 'captitle');
 <section id="grettings" >
   <div class="container">
     <div class="row">
-      <div class="col-sm-6" class="grettings-main">
+      <div class="col-sm-12 col-lg-6" class="grettings-main">
         <h2>Selamat Datang Di UM Banjarmasin</h2>
         <p>
           Universitas Muhammdiyah Banjarmasin memiliki misi untuk menghasilkan lulusan profesional, unggul dan islami yang memiliki integritas kepribadian dan moralitas yang islami dalam konteks kehidupan individual maupun sosial.
         </p>
       </div>
-      <div class="col-sm-2 grettings-box" >
-        <h2>Program Studi</h2>
-        <a href="#" id="prodi">Lihat semua program studi</a>
-      </div>
-      <div class="col-sm-2 grettings-box" >
-        <h2>Pendaftaran</h2>
-        <a href="#" id="pmb">Info Penerimaan Mhs baru</a>
-      </div>
-      <div class="col-sm-2 grettings-box" >
-        <h2>Peta Kampus</h2>
-        <a href="#">Lihat peta kampus</a>
+      <div class="col-sm-12 col-lg-6">
+        <div class="row">
+          <div class="col-sm-4" >
+            <div class="grettings-box">
+              <h2>Program Studi</h2>
+              <a href="#" id="prodi">Lihat semua program studi</a>
+            </div>
+          </div>
+          <div class="col-sm-4" >
+            <div class="grettings-box">
+              <h2>Pendaftaran</h2>
+              <a href="#" id="pmb">Info Penerimaan Mhs baru</a>
+            </div>
+          </div>
+          <div class="col-sm-4" >
+            <div class="grettings-box">
+              <h2>Peta Kampus</h2>
+              <a href="#">Lihat peta kampus</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
