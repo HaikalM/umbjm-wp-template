@@ -523,25 +523,8 @@ div#tweet_meta{
   }
 }
 
-/**
- * quote
- */
-#quote{
-  @media (max-width: $screen-sm-max) {
-    margin-bottom: 3em;
-  }
-  h2{color:$brand-secondary}
-  blockquote{
-    font-style:italic;
-    font-size: 1em;
-  }
-}
 
-.quote-author{
-  margin-top: 1.5em;
-  font-style:normal;
-  font-weight: bold;
-}
+
 /**
  * social icon
  */
@@ -615,6 +598,13 @@ div#tweet_meta{
   // }
 }
 
+
+/**
+ * video
+ */
+#video{
+  @extend .mainPadding;
+}
 #youtube{
   @include socialAccount(#DC4A38);
   // transition:all .2s;
@@ -628,9 +618,34 @@ div#tweet_meta{
 }
 
 #youtube-api{
-  @extend .mainPadding;
+  margin-top: 15px;
+  // @extend .mainPadding;
+  @media (max-width: $screen-sm-max) {
+    .col-xs-6:last-child{display: none}
+  }
+  
 }
 
+/**
+ * quote
+ */
+#quote{
+  margin-bottom: 3em;
+  @media (max-width: $screen-sm-max) {
+    margin-bottom: 3em;
+  }
+  h2{color:$brand-secondary}
+  blockquote{
+    // font-style:italic;
+    font-size: 1em;
+  }
+}
+
+.quote-author{
+  margin-top: 1.5em;
+  font-style:normal;
+  font-weight: bold;
+}
 
 /**
  * footer

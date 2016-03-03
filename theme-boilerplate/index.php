@@ -151,24 +151,33 @@
   </div>
 </section>
 
+ 
+
 <section id="video">
   <div class="container">
     <div class="row">
-      <div class="col-sm-9">
+      <div class="col-sm-6">
         <div class="row" id="youtube-api">
           <div class="loader">
             Loading...
           </div>
         </div>
       </div>
-      <div class="col-sm-3" id="quote">
-        <h2>Mutiara Hari Ini</h2>
-        <blockquote>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum at explicabo, voluptatibus minima ullam nihil consequuntur nesciunt reiciendis in odio tenetur, maxime. Ex nostrum odio accusantium veritatis ipsa, fuga sequi.
-          <span class="quote-author pull-right">Ali Bin Abi Thalib</span>
-        </blockquote>
-
-
+      <div class="col-sm-6" id="quote">
+        <h2>Mutiara Hari Ini</h2>  
+        <?php 
+        // mulai filter halaman sesuai kategori untuk quote
+        $category = 'quote';
+        query_posts( array ( 'category_name' => $category, 'orderby'=>'rand', 'posts_per_page' => 1) ); ?>
+        <?php if ( have_posts() ) : ?>
+          <?php while ( have_posts() ) : the_post(); ?>
+            <?php $id = get_the_id()  ?>
+            <blockquote>
+            <?php the_content() ?>
+            <span class="quote-author pull-right"><?php the_title() ?></span>
+            </blockquote>
+          <?php endwhile;?>
+        <?php endif;?>  
       </div>
     </div>
   </div>
@@ -179,6 +188,6 @@
 <?php //comments_template(); ?>
 <?php //endwhile; endif; ?>
 
-<?php get_template_part( 'nav', 'below' ); ?>
+<?php //get_template_part( 'nav', 'below' ); ?>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
