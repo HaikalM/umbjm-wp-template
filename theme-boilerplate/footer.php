@@ -6,12 +6,41 @@
           <h2>Logo</h2>
         </div>
         <div class="col-sm-3">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi ducimus fuga maiores accusamus aspernatur asperiores dolore natus perferendis, nemo ullam. Voluptates maiores recusandae voluptatum incidunt atque veniam deleniti temporibus quas!
-          </p>
+          <ul id="contact">
+            <li>
+              Jalan S. Parman Komplek Rumah Sakit Islam Banjarmasin
+            </li>
+            <li> Telp/Fax. (0511) 3363002</li>
+            <li>Mail. info@umbjm.ac.id</li>
+          </ul>
         </div>
-        <div class="col-sm-3"></div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+          <ul>
+            <li><a href="#">Menu Satu</a></li>
+            <li><a href="#">Menu Dua</a></li>
+            <li><a href="#">Menu TIga</a></li>
+            <li><a href="#">Menu Empat</a></li>
+            <li><a href="#">Menu Lima</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <ul>
+            <li><a href="#">Menu Satu</a></li>
+            <li><a href="#">Menu Dua</a></li>
+            <li><a href="#">Menu TIga</a></li>
+            <li><a href="#">Menu Empat</a></li>
+            <li><a href="#">Menu Lima</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-2">
+          <ul>
+            <li><a href="#">Menu Satu</a></li>
+            <li><a href="#">Menu Dua</a></li>
+            <li><a href="#">Menu TIga</a></li>
+            <li><a href="#">Menu Empat</a></li>
+            <li><a href="#">Menu Lima</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

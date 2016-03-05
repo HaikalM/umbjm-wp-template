@@ -20,6 +20,10 @@ h1,h2,h3,h4{font-weight: 200}
   padding:0 !important;
 }
 
+.noMargin{
+  margin:0 !important;
+}
+
 .mainPadding{
   padding: 2em 0 !important;
 }
@@ -241,7 +245,7 @@ a{
   li{
     display: inline-table;
     border-left:solid 1px lighten($brand-primary,10%);
-    &:first-child,&:last-child{
+    &:first-child{
       border-left: none;
       padding-left:0px;
     }
@@ -493,12 +497,14 @@ $main-color: $nth !default;
 }
 
 div#tweet_meta{
-  margin-bottom: 1em;
-  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    margin-bottom: 1em  !important;
-  }
+  margin-bottom: 1.5em;
 }
 #tweet_date{
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    margin-bottom: 1em  !important;
+    overflow: hidden;
+    // background: red;
+  }
   ul{
     @extend .noPadding;
     margin:0;
@@ -530,6 +536,11 @@ div#tweet_meta{
  */
 
 #social{
+  @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    // margin-bottom: 1em  !important;
+    // background: red;
+    margin-top: 1em;
+  }
   padding:0;
   margin:2em 0 0 0;
   li{
@@ -650,6 +661,33 @@ div#tweet_meta{
 /**
  * footer
  */
+
+#footer{
+  ul{
+    @extend .noPadding; 
+    @extend .noMargin;
+    @media (max-width: $screen-sm-max) {
+      // .col-xs-6:last-child{display: none}
+      border-bottom: solid 1px lighten(#444,15%);
+      margin-bottom: 1em !important;
+      padding-bottom: 5px !important;
+      display: block;
+    }
+  }
+  li{
+    list-style: none;
+    line-height: 2em;
+    a{
+      color:rgba(#fff,.8);
+      // padding:10px 0;
+      display: block;
+      &:hover{
+        text-decoration: none;
+        color:#fff;
+      }
+    }
+  }
+}
 .footer-top{
   padding:2em 0;
   color:rgba(#fff,.8);

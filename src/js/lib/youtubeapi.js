@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
             // panggil video id
             vidId = item.snippet.resourceId.videoId;
             // styling data dari API
-            console.log(vidId);
+            // console.log(vidId);
             output = '<div class=\"col-xs-6 col-md-4\"><a href=\"https://youtu.be/'+vidId+'\" target=\"_blank\"><div class=\"thumbnail\"><img src=\"http://img.youtube.com/vi/'+vidId+'/sddefault.jpg\" alt=\"+vidJudul+\"><div class=\"caption\"><h5>'+vidJudul+'</h5></div></div></a></div>';
 
             // inject ke halaman html

@@ -28,7 +28,8 @@ add_filter('the_title', 'captitle');
 <header id="header">
   <nav class="nav-secondary">
     <div class="container">
-    <ul >
+    <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+   <!--  <ul >
       <li><a href="#">Calon Mahasiswa</a></li>
       <li><a href="#">Mahasiswa</a></li>
       <li><a href="#">Orang Tua</a></li>
@@ -37,7 +38,7 @@ add_filter('the_title', 'captitle');
       <li class="pull-right">
         
       </li>
-    </ul>
+    </ul> -->
     <form id="searchform" method="get" class="pull-right">
       <div>
        <input name="s" id="s" type="text" placeholder="pencarian">
@@ -75,7 +76,8 @@ add_filter('the_title', 'captitle');
      </button>
     </div>
   </form>
-   <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+  <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+  <?php wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
 </div>
 
 <?php if ( is_front_page() || is_home() || is_front_page() && is_home() ) : ?>

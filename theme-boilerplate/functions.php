@@ -6,6 +6,7 @@ load_theme_textdomain( 'blankslate', get_template_directory() . '/languages' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'post-thumbnails' );
+
 global $content_width;
 
 
@@ -14,7 +15,10 @@ if ( ! isset( $content_width ) ) $content_width = 640;
   register_nav_menus(array( 
       'main-menu' =>'Main menu',
       'layanan-menu' =>'Layanan Menu',
-      'top-menu' => 'Top Menu'
+      'top-menu' => 'Top Menu',
+      'footer-1' => 'Footer 1 Menu',
+      'footer-2' => 'Footer 2 Menu',
+      'footer-3' => 'Footer 3 Menu'
       ));
 }
 

@@ -96,13 +96,13 @@
           <!-- show tweet meta and button -->
           <div class="col-sm-4" id="tweet_meta">
             <div class="row">
-              <div class="col-xs-6 col-sm-5">
+              <div class="col-xs-6 col-sm-12 col-lg-5">
                 <div id="tweet_date">
                   proses...
                 </div>
               </div>
 
-              <div class="col-xs-6 col-sm-7">
+              <div class="col-xs-6 col-sm-12 col-lg-7">
                 <a id="badge" href="https://twitter.com/um_bjm" class="tweet-link btn btn-default" data-ua-action="@um_bjm timeline" data-ua-label="badge">
                   <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg2" xml:space="preserve" height="148.12" width="182.26" version="1.1" viewBox="0 0 182.66667 150.66667" data-livestyle-extension="available">
                     <metadata id="metadata8"><rdf:RDF><cc:Work rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/></cc:Work></rdf:RDF></metadata>
