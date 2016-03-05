@@ -9,6 +9,7 @@
 
         </div>
         <div class="col-sm-3">
+          <h3>Universitas Muhammadiyah Banjarmasin</h3>
           <ul id="contact">
             <li>
               Jalan S. Parman Komplek Rumah Sakit Islam Banjarmasin

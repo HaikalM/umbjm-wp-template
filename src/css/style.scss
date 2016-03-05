@@ -663,8 +663,20 @@ div#tweet_meta{
  */
 
 #footer{
+  h3{
+    @extend .noMargin;
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 30px;
+  }
   img{
     width: 100%;
+    @media (max-width: $screen-sm-max) {
+      // .col-xs-6:last-child{display: none}
+      width:300px;
+      margin-bottom: 1.5em;
+    }
   }
   ul{
     @extend .noPadding; 
