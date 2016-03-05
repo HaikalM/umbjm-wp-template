@@ -663,6 +663,9 @@ div#tweet_meta{
  */
 
 #footer{
+  img{
+    width: 100%;
+  }
   ul{
     @extend .noPadding; 
     @extend .noMargin;
@@ -687,6 +690,10 @@ div#tweet_meta{
       }
     }
   }
+}
+
+#copyright{
+  margin:5px 0;
 }
 .footer-top{
   padding:2em 0;
