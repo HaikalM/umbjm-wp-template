@@ -6,4 +6,7 @@
 </ul>
 </div>
 <?php endif; ?>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, at voluptas quod minus, eligendi adipisci magni veniam consequatur asperiores similique quis mollitia et repudiandae? Natus voluptate harum, vel repellendus ea?
+</p>
 </aside>
