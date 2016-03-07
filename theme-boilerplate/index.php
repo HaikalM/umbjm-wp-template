@@ -30,7 +30,12 @@
         <?php endwhile;?>
       <?php endif;?>  
       </ul>
-      <a href="#">
+      <?php 
+      $category_id = get_cat_ID( $category );
+      $category_link = get_category_link( $category_id );
+      ?>
+  
+      <a href="<?php echo esc_url( $category_link ); ?>">
         Lihat semua berita &raquo;
       </a>
     </div>
@@ -73,9 +78,16 @@
         <?php endwhile;?>
       <?php endif;?>  
       </ul>
-      <a href="#">
+
+      <?php 
+      $category_id = get_cat_ID( $category );
+      $category_link = get_category_link( $category_id );
+      ?>
+  
+      <a href="<?php echo esc_url( $category_link ); ?>">
         Lihat semua agenda &raquo;
       </a>
+
     </div>
     <div class="col-sm-3">
       <h2>LAYANAN ONLINE</h2>
@@ -84,8 +96,6 @@
   </div>
 <!-- endcontainer -->
 </div>
-
-<div id="exampletweet"></div>
 
 <!-- tweet -->
 <section id="tweet">
@@ -98,6 +108,9 @@
             <div class="row">
               <div class="col-xs-6 col-sm-12 col-lg-5">
                 <div id="tweet_date">
+                  <div class="loader">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/loader.gif">
+                  </div>
                   proses...
                 </div>
               </div>
@@ -118,6 +131,9 @@
           </div>
           <!-- show tweet text -->
           <div class="col-xs-12 col-sm-8" id="tweet_text">
+            <div class="loader">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/loader.gif">
+            </div>
             proses...
           </div>
         </div>
@@ -160,7 +176,10 @@
       <div class="col-sm-6">
         <div class="row" id="youtube-api">
           <div class="loader">
-            Loading...
+            <div class="loader">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/loader.gif">
+            </div>
+            proses...
           </div>
         </div>
       </div>
@@ -185,10 +204,24 @@
 </section>
 
 <?php //if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php //get_template_part( 'entry' ); ?>
-<?php //comments_template(); ?>
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <?php get_template_part( 'entry' ); ?>
+      <?php //comments_template(); ?>
+    </div>
+    <div class="col-sm-3">
+      <?php get_sidebar(); ?>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <?php get_template_part( 'nav', 'below' ); ?>
+    </div>
+  </div>
+</div> -->
 <?php //endwhile; endif; ?>
 
-<?php //get_template_part( 'nav', 'below' ); ?>
-<?php //get_sidebar(); ?>
+
+
 <?php get_footer(); ?>
