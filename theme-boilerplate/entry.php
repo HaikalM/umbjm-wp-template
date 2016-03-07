@@ -1,4 +1,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="pull-left">
+  <?php custom_breadcrumbs(); ?>
+</div>
+
+
 <?php 
 // kalo halaman single post
 if ( is_singular() ) { 
@@ -10,10 +15,17 @@ if ( is_singular() ) {
 
  <?php if ( is_singular() ) { echo '</h1>'; 
  } else {
-  echo '</h2>'; } ?> <?php edit_post_link(); ?>
+  echo '</h2>'; } ?>
+
+<div class="meta">
+  <div class="pull-left">
+     <?php edit_post_link(); ?>
+  </div>
+  <?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
+</div>
 
 
-<?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
+
 <?php get_template_part( 'entry', ( is_archive() || is_search() ? 'summary' : 'content' ) ); ?>
 
 <?php if ( !is_search() ) get_template_part( 'entry-footer' ); ?>

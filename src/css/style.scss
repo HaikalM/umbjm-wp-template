@@ -470,6 +470,72 @@ $main-color: $nth !default;
   }
 }
 
+.entry-title{
+  clear:both;
+}
+
+/**
+ * breadcrumb
+ */
+#breadcrumbs{
+    @extend .noPadding;
+    list-style:none;
+    margin:25px 0;
+    overflow:hidden;
+}
+  
+#breadcrumbs li{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:8px;
+}
+  
+#breadcrumbs .separator{
+    font-size:18px;
+    font-weight:100;
+    color:#ccc;
+}
+
+/**
+ * entry-meta
+ */
+.meta{
+  padding: 1em;
+  overflow: hidden;
+  background: #eee;
+  margin: 2em 0;
+}
+.entry-meta{
+  // @extend #breadcrumbs;
+  // float: right;
+}
+
+
+/**
+ * sidebar
+ */
+#sidebar{
+  margin-bottom: 2em;
+  ul{
+    @extend .noPadding;
+    @extend .noMargin;
+  }
+  li{
+    list-style:none;
+  }
+}
+
+.widget-container{
+  margin-bottom: 2em;
+}
+
+.widget-title{
+  color:$brand-secondary;
+}
+
+.widget-tag a{
+  color:#fff;
+}
 
 /**
  * twiteer
