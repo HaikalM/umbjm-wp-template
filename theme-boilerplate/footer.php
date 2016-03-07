@@ -37,7 +37,7 @@
       </div>
       <div class="pull-right">
         <a href="#header" class="btn btn-default">
-          <span class="glyphicon glyphicon-chevron-up"></span>
+          <span class="glyphicon glyphicon-chevron-up toTop"></span>
         </a>
       </div>
     </div>
