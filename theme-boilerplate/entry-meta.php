@@ -1,5 +1,5 @@
-<section class="entry-meta pull-right">
-<span class="author vcard"><?php the_author(); ?></span>
-<span class="meta-sep"> | </span>
-<span class="entry-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
+<section class="entry-meta pull-left">
+<span class="author vcard">Diterbitkan pada tanggal : </span>
+<span class="entry-date"><?php the_date('j-m-Y'); ?>
+</span>
 </section>

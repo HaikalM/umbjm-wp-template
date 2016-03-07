@@ -18,7 +18,7 @@ if ( is_singular() ) {
   echo '</h2>'; } ?>
 
 <div class="meta">
-  <div class="pull-left">
+  <div class="pull-right">
      <?php edit_post_link(); ?>
   </div>
   <?php if ( !is_search() ) get_template_part( 'entry', 'meta' ); ?>
