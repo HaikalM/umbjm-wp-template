@@ -527,6 +527,9 @@ $main-color: $nth !default;
 
 .widget-container{
   margin-bottom: 2em;
+  a{
+    line-height: 25px;
+  }
 }
 
 .widget-title{
@@ -740,10 +743,15 @@ div#tweet_meta{
     line-height: 30px;
   }
   img{
-    width: 100%;
-    @media (max-width: $screen-sm-max) {
+    width: 135px;
+
+    @media (max-width: $screen-sm-max){
+      width:100px;
+    }
+
+    @media (max-width: $screen-xs-max){
       // .col-xs-6:last-child{display: none}
-      width:300px;
+      width:100px;
       margin-bottom: 1.5em;
     }
   }

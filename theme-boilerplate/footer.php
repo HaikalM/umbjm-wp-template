@@ -2,13 +2,13 @@
   <div class="footer-top">
     <div class="container">
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Universitas Muhammadiyah">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.png" alt="Universitas Muhammadiyah">
           </a>
 
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
           <h3>Universitas Muhammadiyah Banjarmasin</h3>
           <ul id="contact">
             <li>
@@ -36,8 +36,8 @@
         <?php echo sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'blankslate' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) );  ?>
       </div>
       <div class="pull-right">
-        <a href="#header" class="btn btn-default">
-          <span class="glyphicon glyphicon-chevron-up toTop"></span>
+        <a href="#header" class="btn btn-default toTop">
+          <span class="glyphicon glyphicon-chevron-up "></span>
         </a>
       </div>
     </div>
