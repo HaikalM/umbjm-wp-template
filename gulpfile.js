@@ -3,10 +3,11 @@ require('es6-promise').polyfill()
 var gulp          = require('gulp'),
     postcss       = require('gulp-postcss'),
     sass          = require('gulp-sass'),
-    csswring      = require('csswring');
-    autoprefixer  = require('autoprefixer');
+    csswring      = require('csswring'),
+    autoprefixer  = require('autoprefixer'),
     jshint        = require('gulp-jshint'),
     concat        = require('gulp-concat'),
+    uglify        = require('gulp-uglify'),
     imagemin      = require('gulp-imagemin'),
     plumber       = require('gulp-plumber'),
     notify        = require('gulp-notify'),
@@ -54,11 +55,19 @@ gulp.task('js',function(){
   return gulp.src([
     // config.jqueryDir+'/dist/jquery.min.js',
     config.bootstrapDir+'/assets/javascripts/bootstrap.min.js',
-    config.sourceDir+'/js/**/**.js'
+    config.sourceDir+'/js/**/**.js',
+    '!'+config.sourceDir+'/js/dist/main.js'
     ])
     .pipe(concat('main.js'))
-    .pipe(gulp.dest(config.destDir+'/js'))
+    .pipe(gulp.dest(config.sourceDir+'/js/dist'))
     .pipe(livereload());
+})
+
+gulp.task('minjs', function(){
+  return gulp.src(config.sourceDir+'/js/dist/main.js')
+  .pipe(uglify())
+  .pipe(gulp.dest(config.destDir+'/js'))
+  .pipe(livereload());
 })
 
 gulp.task('img',function(){
@@ -83,7 +92,8 @@ gulp.task('production', function() {
 gulp.task('watch',function(){
   livereload.listen();
   gulp.watch(config.sourceDir+'/css/*.scss',['sass']);
-  gulp.watch(config.sourceDir+'/js/**/**.js',['js']);
+  gulp.watch([config.sourceDir+'/js/**/**.js','!'+config.sourceDir+'/js/dist'],['js']);
+  gulp.watch(config.destDir+'/js/*.js',['minjs']);
   gulp.watch('img/src/*.{png,jpg,gif}',['img']);
   gulp.watch(config.destDir+'/**',['template']);
 })
