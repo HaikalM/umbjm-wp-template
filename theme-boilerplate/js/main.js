@@ -480,8 +480,3 @@ jQuery('#resp-icon .menu').click (function(){
   jQuery(this).toggleClass('open');
   respmenu.fadeToggle();
 });
-
-jQuery('.toTop').click(function(e){
-  e.preventDefault();
-  jQuery('html, body').animate({scrollTop:0},1000);
-})
